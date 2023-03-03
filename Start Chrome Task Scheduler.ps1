@@ -1,0 +1,2 @@
+﻿Start-Process -FilePath Chrome -ArgumentList '--new-window https://alliedstoneinc.atlassian.net/ https://desk.zoho.com/support/alliedstoneinc/ShowHomePage.do#Cases https://outlook.office.com/mail/'
+[Environment]::Exit(1)

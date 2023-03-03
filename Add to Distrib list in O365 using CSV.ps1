@@ -1,0 +1,1 @@
+﻿Import-Csv "C:\Users\cole.deguzman\Documents\TemplateCSVforBulkUpload.csv" | foreach{Add-DistributionGroupMember -Identity $_.identity -Member $_.members}
