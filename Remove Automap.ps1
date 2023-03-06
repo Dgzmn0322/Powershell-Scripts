@@ -19,7 +19,7 @@ catch {
     Start-Sleep -Seconds 5
 }
 
-# Count will increment each do attempt attempt
+# Count will increment each do attempt
 $count++
 
 # Untill either a success is made or equals 5
