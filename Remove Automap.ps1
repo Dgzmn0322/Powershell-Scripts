@@ -1,7 +1,22 @@
-﻿
+﻿$module = Get-InstalledModule -name ExchangeOnlineManagement
+if($module.count -eq 0)
+{
+    Write-Host "Exchange Online Management is not available" -ForegroundColor Yellow
+    $confirm = Read-Host "Do you want to install the module? [Y] Yes [N] No"
+    if($Confirm -match "[yY]")
+    {
+        Install-Module -name ExchangeOnlineManagement -AllowClobber
+    
+    }
+    else
+    {
+        Write-Host "Exhcange Online Management Powershell Module is required for this script. Please install module using the install-module exchangeonlinemanagement or retry this script and type y" -ForegroundColor Cyan
+    }
+}
 
 # Connect to Exchange Online
-Connect-ExchangeOnline 
+$cred = get-credential
+Connect-ExchangeOnline -credential $cred
 
 # Count starts at 0
 $count = 0
